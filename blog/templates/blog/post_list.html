@@ -3,36 +3,43 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Django Girls blog</title>
+    <title>My First True Website (A blog built with Django)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
 <body>
     <div>
-        <h1><a href="">Django Girls Blog</h1></a></h1>
+        <h1><a href="">Mr Hulk's Blog</h1></a></h1>
     </div>
 
-    <div>
-        <p>published: 15.02.2019, 14:45</p>
-        <h2><a href="">My first post</a></h2>
-        <p>
-            These are random texts that are acting as space fillers. 
-            These are random texts that are acting as space fillers. 
-            These are random texts that are acting as space fillers. 
-            These are random texts that are acting as space fillers.
-        </p>
-    </div>
-
-    <div>
-        <p>published: 15.02.2019, 14:45</p>
-        <h2><a href="">My first post</a></h2>
-        <p>
-            These are random texts that are acting as space fillers. 
-            These are random texts that are acting as space fillers. 
-            These are random texts that are acting as space fillers. 
-            These are random texts that are acting as space fillers.
-        </p>
-    </div>   
+    {% for post in posts %}
+        <!--<div>
+            <p>published: 15.02.2019, 14:45</p>
+            <h2><a href="">My first post</a></h2>
+            <p>
+                These are random texts that are acting as space fillers. <br />
+                These are random texts that are acting as space fillers. <br />
+                These are random texts that are acting as space fillers. <br />
+                These are random texts that are acting as space fillers. <br />
+            </p>
+        </div>
+        <hr />
+        <div>
+            <p>published: 15.02.2019, 14:45</p>
+            <h2><a href="">My second post</a></h2>
+            <p>
+                These are random texts that are acting as space fillers. <br />
+                These are random texts that are acting as space fillers. <br />
+                These are random texts that are acting as space fillers. <br />
+                These are random texts that are acting as space fillers. <br />
+            </p>
+        </div>-->
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
