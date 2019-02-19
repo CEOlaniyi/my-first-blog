@@ -1,52 +1,13 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My First True Website (A blog built with Django)</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"	rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-</head>
-<body>
-    <div class="page-header">
-        <h1><a href="">Mr Hulk's Blog</h1></a></h1>
-    </div>
-    <!--<div>
-        <p>published: 15.02.2019, 14:45</p>
-        <h2><a href="">My first post</a></h2>
-        <p>
-            These are random texts that are acting as space fillers. <br />
-            These are random texts that are acting as space fillers. <br />
-            These are random texts that are acting as space fillers. <br />
-            These are random texts that are acting as space fillers. <br />
-        </p>
-    </div>
-    <hr />
-    <div>
-        <p>published: 15.02.2019, 14:45</p>
-        <h2><a href="">My second post</a></h2>
-        <p>
-            These are random texts that are acting as space fillers. <br />
-            These are random texts that are acting as space fillers. <br />
-            These are random texts that are acting as space fillers. <br />
-            These are random texts that are acting as space fillers. <br />
-        </p>
-    </div>-->
-    <div class="content	container">
-        <div class="row">
-            <div class="col-md-8">
-                {% for post	in posts %}
-                    <div class="post">
-                        <div class="date">
-                            <p>published: {{ post.published_date }}</p>
-                        </div>
-                        <h1><a href="">{{ post.title }}</a></h1>
-                        <p>{{ post.text|linebreaksbr }}</p>
-                    </div>
-                {% endfor %}
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post	in posts %}
+        <div class="post">
+            <div class="date">
+                published: {{ post.published_date }}
             </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-    </div>
-</body>
-</html>
+    {% endfor %}
+{% endblock %}
