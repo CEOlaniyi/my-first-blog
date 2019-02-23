@@ -71,15 +71,17 @@ body {
     background-color: rgba(128, 0, 128, 0.664);
     width: 100%;
     text-align: center;
-    padding: 1px;
+    padding: 30px;
 }
-
 .my-main-header h1 a {
     color: rgb(251, 248, 252);
     text-align: center;
     margin: 0px !important;
 }
 
+.my-main-header h1 a:hover{
+    text-decoration: none;
+}
 .my-main-body {
     width: 600px;
     margin: auto;
@@ -101,3 +103,10 @@ body {
     margin: 10px 0px;
 }
 
+.top-menu {
+    float: right;
+}
+
+h1,	h2,	h3,	h4	{
+    font-family:	'Lobster',	cursive;
+}
