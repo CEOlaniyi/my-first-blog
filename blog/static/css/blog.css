@@ -73,6 +73,7 @@ body {
     text-align: center;
     padding: 30px;
 }
+
 .my-main-header h1 a {
     color: rgb(251, 248, 252);
     text-align: center;
@@ -82,6 +83,7 @@ body {
 .my-main-header h1 a:hover{
     text-decoration: none;
 }
+
 .my-main-body {
     width: 600px;
     margin: auto;
@@ -105,6 +107,9 @@ body {
 
 .top-menu {
     float: right;
+    position: relative;
+    font-size: 40px;
+    padding: 5px;
 }
 
 h1,	h2,	h3,	h4	{
